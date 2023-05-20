@@ -4,3 +4,4 @@ pykintone
 line-bot-sdk
 black
 flake8
+python-dotenv

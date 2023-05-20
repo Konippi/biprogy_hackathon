@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-BASE_URL = os.environ.get('KINTONE_BASE_URL')
-BASE_URL_ALL = os.environ.get('KINTONE_BASE_URL_ALL')
-API_TOKEN_SHOP = os.environ.get('KINTONE_SHOP_ACCESS_TOKEN')
-API_TOKEN_COUPON = os.environ.get('KINTONE_COUPON_ACCESS_TOKEN')
+BASE_URL = os.environ.get("KINTONE_BASE_URL")
+BASE_URL_ALL = os.environ.get("KINTONE_BASE_URL_ALL")
+API_TOKEN_SHOP = os.environ.get("KINTONE_SHOP_ACCESS_TOKEN")
+API_TOKEN_COUPON = os.environ.get("KINTONE_COUPON_ACCESS_TOKEN")
 
 
 def get_kintone_shop(id):
