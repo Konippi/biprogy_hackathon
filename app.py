@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
+# from pykintone import pykintone
 
 app = Flask(__name__)
 
 @app.route('/shop', methods=['GET'])
 def shop_list():
     # kintoneからselect
-    return render_template('shop/list.html', name="店名")
+    return render_template('shop/list.html')
 
 @app.route('/shop/details', methods=['GET'])
 def shop_details():
