@@ -1,7 +1,15 @@
+import requests
 from flask import Flask, render_template, request, redirect, url_for
-# from pykintone import pykintone
 
 app = Flask(__name__)
+# URL = "https://7hsj87vfpdhh.cybozu.com/k/v1/record.json?app=1&id=2"
+# API_TOKEN = "t4O70FRaVB3sD9UdOWCH1xKlaGiBAjziGBYkm37x"
+
+# def get_kintone(url, api_token):
+#     """kintoneのレコードを1件取得する関数"""
+#     headers = {"X-Cybozu-API-Token": api_token}
+#     resp = requests.get(url, headers=headers)
+#     return resp
 
 @app.route('/shop', methods=['GET'])
 def shop_list():
