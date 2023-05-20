@@ -1,9 +1,28 @@
 .main_color {
-	color: #f2916d;
+	color: #ff701e;
 }
 
 .main_bg_color {
-	background-color: #f2916d;
+	background-color: #ff701e;
+}
+
+.nav-link {
+	display: inline-block;
+	position: relative;
+}
+.nav-link::after {
+	position: absolute;
+	content: '';
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0;
+	height: 2px;
+	background: #ffffff;
+	transition: all .3s ease 0s;
+}
+.nav-link:hover::after {
+	width: 100%;
 }
 
 .detail_bg_color {
