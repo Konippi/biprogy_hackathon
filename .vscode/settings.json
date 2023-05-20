@@ -10,5 +10,9 @@
   "python.formatting.blackArgs": [
     "--line-length=120"
   ],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "[html]": {
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false
+  }
 }
