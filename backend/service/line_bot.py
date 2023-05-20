@@ -7,7 +7,7 @@ ACCESS_TOKEN = os.environ.get('LINE_BOT_ACCESS_TOKEN')
 API_URL = os.environ.get('LINE_BOT_API_URL')
 
 
-def send_ticket(message):
+def send_coupon(message):
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {ACCESS_TOKEN}'
