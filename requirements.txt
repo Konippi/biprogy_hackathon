@@ -2,3 +2,5 @@ flask
 requests
 pykintone
 line-bot-sdk
+black
+flake8

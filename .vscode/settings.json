@@ -1,4 +1,14 @@
 {
-  "editor.tabSize": 2,
+  "python.linting.enabled":true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.lintOnSave":true,
+  "python.formatting.provider": "black",
+  "python.linting.flake8Args": [
+    "--max-line-length=120"
+  ],
+  "python.formatting.blackArgs": [
+    "--line-length=120"
+  ],
   "editor.formatOnSave": true
 }
