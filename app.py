@@ -3,9 +3,11 @@ from service import line_bot, kintone
 
 app = Flask(__name__)
 
+
 @app.route('/', methods=['GET'])
 def init():
     return redirect('/shop')
+
 
 @app.route('/shop', methods=['GET'])
 def shop_list():
@@ -13,20 +15,24 @@ def shop_list():
     # line_bot.send_ticket('sample')
     return render_template('shop/list.html')
 
+
 @app.route('/shop/<shop_id>', methods=['GET'])
 def shop_details(shop_id):
     # kintoneからselect id = shop_id
     return render_template('shop/details.html')
 
-@app.route('/ticket', methods=['GET'])
+
+@app.route('/coupon', methods=['GET'])
 def ticket_list():
     # kintoneからselect
-    return render_template('ticket/list.html')
+    return render_template('coupon/list.html')
 
-@app.route('/ticket/<ticket_id>', methods=['GET'])
+
+@app.route('/coupon/<coupon_id>', methods=['GET'])
 def ticket_details(ticket_id):
     # kintoneからselect id = ticket_id
-    return render_template('ticket/details.html')
+    return render_template('coupon/details.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True, port="5000")

@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-    <head>
-        <html lang="ja">
-        <meta charset="UTF-8">
-        <title>誰もが水戸観光大使</title>
-        <!-- Bootstrap core CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <header>
-            <nav class="navbar navbar-expand-xl navbar-light bg-light fs-3">
-                <div class="container-fluid">
-                  <a class="navbar-brand fs-1" href="#">白米</a>
-                  <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<head>
+  <html lang="ja">
+  <meta charset="UTF-8">
+  <title>誰もが水戸観光大使</title>
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-xl navbar-light bg-light fs-3">
+      <div class="container-fluid">
+
+        <a class="navbar-brand fs-1" href="#">白米</a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button> -->
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/shop">お店情報</a>
-                      </li>
-                      
-                      <li class="nav-item">
-                        <a class="nav-link" href="/ticket">クーポン</a>
-                      </li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/shop">お店情報</a>
+            </li>
 
-                      <!-- <li class="nav-item dropdown">
+            <li class="nav-item">
+              <a class="nav-link" href="/coupon">クーポン</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Dropdown
                         </a>
@@ -37,30 +43,31 @@
                         </ul>
                       </li> -->
 
-                      <!-- <li class="nav-item">
+            <!-- <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                       </li> -->
 
-                    </ul>
-                  </div>
-                </div>
-              </nav>
-        </header>
-
-        <div>
-          {% block subtitle %}{% endblock %}
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
 
-        <!-- <div class="list-field">aaa</div> -->
-        <div class="album py-5 bg-body-tertiary">
-          <div class="container">
-            <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4">
+  <div>
+    {% block subtitle %}{% endblock %}
+  </div>
 
-              {% block contents %}{% endblock %}
+  <!-- <div class="list-field">aaa</div> -->
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-4 row-cols-md-4 g-4">
 
-            </div>
-          </div>
-        </div>
+        {% block contents %}{% endblock %}
 
-    </body>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
