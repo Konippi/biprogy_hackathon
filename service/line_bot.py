@@ -3,15 +3,14 @@ import requests
 import json
 
 
-ACCESS_TOKEN = os.environ['LINE_BOT_ACCESS_TOKEN']
-API_URL = os.environ['LINE_BOT_API_URL']
+ACCESS_TOKEN = os.environ.get('LINE_BOT_ACCESS_TOKEN')
+API_URL = os.environ.get('LINE_BOT_API_URL')
 
 
 def send_ticket(message):
-    url = ''
     headers = {
-        'content-type': 'application/json',
-        'authorization': f'Bearer{{{ACCESS_TOKEN}}}'
+        'Content-Type': 'application/json',
+        'Authorization': f'Bearer {ACCESS_TOKEN}'
     }
     body = {
         'messages': [
@@ -21,4 +20,4 @@ def send_ticket(message):
             }
         ]
     }
-    requests.post(url=url, headers=headers, data=json.dumps(body))
+    requests.post(url=API_URL, headers=headers, data=json.dumps(body))
