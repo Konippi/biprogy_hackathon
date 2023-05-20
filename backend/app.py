@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, redirect
 from service import line_bot, kintone
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_folder="../frontend/static", template_folder="../frontend/templates")
 
 
 @app.route('/', methods=['GET'])
