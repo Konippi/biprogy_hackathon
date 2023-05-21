@@ -27,6 +27,18 @@ def get_kintone_shop_all():
     return resp
 
 
+def get_kintone_shop_search(conte):
+    # tag = "foods", "clothes", "leisure"
+    # query=tag=
+    params = {
+        "app": 1,
+        "id": id,
+    }
+    headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
+    resp = requests.get(BASE_URL, headers=headers, params=params)
+    return resp
+
+
 def get_kintone_coupon(id):
     params = {
         "app": 2,
@@ -44,9 +56,20 @@ def get_kintone_coupon_all():
     return resp
 
 
-if __name__ == "__main__":
-    # RESP = get_kintone_shop(2)
-    # RESP = get_kintone_shop_all()
-    # RESP = get_kintone_coupon(1)
-    RESP = get_kintone_coupon_all()
-    print(RESP.text)
+# def get_kintone_coupon_all():
+#     headers = {"X-Cybozu-API-Token": API_TOKEN_COUPON}
+#     params = {
+#         "app": 2,
+#         "query": id,
+#     }
+#     url = BASE_URL_ALL + "?app=2"
+#     resp = requests.get(url, headers=headers)
+#     return resp
+
+
+# if __name__ == "__main__":
+#     # RESP = get_kintone_shop(2)
+#     # RESP = get_kintone_shop_all()
+#     # RESP = get_kintone_coupon(1)
+#     RESP = get_kintone_coupon_all()
+#     print(RESP.text)
