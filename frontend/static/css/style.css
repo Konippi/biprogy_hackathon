@@ -35,6 +35,7 @@
 .search-select {
 	width: 120px !important;
 }
+
 .detail_bg_color {
 	border: 4px solid;
 	border-color: #ffde91;
@@ -71,4 +72,11 @@
 	color: inherit;
 	text-decoration: none;
 	color: #ffffff;
+}
+
+.img_crop {
+	width: 450px;
+	height: 300px;
+	/* overflow: hidden; */
+	object-fit: cover;
 }
