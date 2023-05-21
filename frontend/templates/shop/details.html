@@ -39,21 +39,22 @@
   </div>
   <div class="ms-4 fs-6 black">{{ shop["call_number"]['value'] }}</div>
   <div class="fs-5 mt-3 black"><i class="bi bi-clock me-2"></i>営業時間</div>
-  {% set time_tag = shop['businesshoure_0']['value'] %} {% if time_tag == "-" %}
-  終日 {% else %} {{ shop['businesshoure_0']['value'] }} {% endif %}
+  <div class="ms-4 fs-6 black">
+    {% set time_tag = shop['businesshoure_0']['value'] %} {% if time_tag == "-" %}
+    終日 {% else %} {{ shop['businesshoure_0']['value'] }} {% endif %}
+  </div>
+  <div class="fs-5 mt-3 black">
+    <i class="bi bi-globe2 me-2"></i>ウェブサイト
+  </div>
+  {% set tag = shop['adress']['value'] %} {% if tag == "-" %}
+  ウェブサイトはありません。 {% else %}
+  <a class="ms-4 fs-6" href="{{ shop['adress']['value'] }}">
+    {{ shop["store_name"]["value"] }}-HP
+  </a>
+  {% endif %}
 </div>
-<div class="fs-5 mt-3 black">
-  <i class="bi bi-globe2 me-2"></i>ウェブサイト
-</div>
-{% set tag = shop['adress']['value'] %} {% if tag == "-" %}
-ウェブサイトはありません。 {% else %}
-<a class="ms-4 fs-6" href="{{ shop['adress']['value'] }}">
-  {{ shop["store_name"]["value"] }}-HP
-</a>
-{% endif %}
-</div>
-<div class="col-1"></div>
-<div class="col-10">{{ shop['detail']['value'] }}</div>
+<div class="col-10">
+  <div class="fs-5 mt-1 black"><i class="bi bi-book me-2"></i>詳細説明</div>
+  <div class="ms-4 mt-2 fs-6 black">{{ shop['detail']['value'] }}</div>
 
-{% endblock %}
-</div>
+  {% endblock %}
