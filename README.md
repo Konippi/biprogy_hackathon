@@ -19,28 +19,28 @@
 ## Pages
 - Shop List Page
 
-![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/8c7a3a93-151e-45d9-9ef9-d4481eaa9ca7)
+![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/ef10fd19-dbe1-461e-bc40-feff7b7c7ec1)
 
 <br>
 
 - Shop Details Page
   
-![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/af0dc3b0-60d5-4be2-86b9-23c152563942)
+![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/352cc43b-bf38-493e-b9dc-8fbf492fafcb)
 
 <br>
 
 - Coupon List Page
 
-![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/74f139bc-5d8d-4df7-86bf-e7c551971f1e)
+![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/b514f205-e68d-4c43-8f73-69273ce38b46)
 
 <br>
 
 - Coupon Details Page
 
-![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/2c7ab384-384f-4ff5-a1d2-37fdf2108c2d)
+![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/b7d533ad-e59c-4f6e-84d7-46678e58ef1b)
 
 <br>
 
 - Posting Coupon Page
 
-![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/666dbefa-7be8-42a0-8044-8f2fc8b0900c)
+![image](https://github.com/Konippi/biprogy_hackathon/assets/86059523/6b753b31-286c-4818-9d45-7aa168455f47)
