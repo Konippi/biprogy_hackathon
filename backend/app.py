@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from service import line_bot, kintone
+from datetime import datetime
 
 
 app = Flask(__name__, static_folder="../frontend/static", template_folder="../frontend/templates")
@@ -51,8 +52,29 @@ def coupon_details(coupon_id):
 
 @app.route("/form", methods=["GET"])
 def admin_form():
-    return render_template("form/form.html")
+    shop_name = request.args.get("shop-name")
+    if shop_name:
+        coupon_store_name = request.args.get("shop-name")
+        print(coupon_store_name)
+        time = datetime.now()
+        PARAMS = {
+            "coupon_store_name": coupon_store_name,
+            "detail_coupon": 410,
+            "coupon_image_url": 1400,
+            "publish_date": time,
+            "coupon_tag": 1000
+        }
+        post_kintone_coupon(PARAMS)
+        print()
+        return render_template("form/form.html")
+    else:
+        return render_template("form/form.html")
 
+@app.route("/coupon/new", methods=["GET"])
+def admin_new_coupon():
+    print("dsjfksjdlfksjklsjlkf")
+   
+    return redirect('/form')
 
 if __name__ == "__main__":
     app.config["TEMPLATES_AUTO_RELOAD"] = True
