@@ -6,14 +6,13 @@
 
 <div class="mx-auto w-75 mt-5">
   <h4 class="mt-2 mb-2">掲載内容</h4>
-  <form action="/shop/new" method="post" class="needs-validation" novalidate>
+  <form action="/coupon/new" method="post" class="needs-validation" novalidate>
     <div class="row g-3">
 
       <!-- 店名を入力 -->
       <div class="col-12 mt-5">
         <label for="shop-name" class="form-label">店名</label>
-        <input type="text" class="form-control" id="shop-name" placeholder="○○店" required />
-
+        <input name="name" type="text" class="form-control" id="shop-name" placeholder="○○店" required />
         <div class="invalid-feedback">必須の項目です。</div>
       </div>
 
@@ -21,7 +20,7 @@
       <div class="col-12 mt-5">
         <label for="expireDay" class="form-label">有効期限</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="expireDay" placeholder="発行から30日" required />
+          <input name="due-date" type="text" class="form-control" id="expireDay" placeholder="発行から30日" required />
           <div class="invalid-feedback">必須の項目です。</div>
         </div>
       </div>
@@ -29,7 +28,7 @@
       <!-- クーポン詳細を追加 -->
       <div class="col-12 mt-5 mb-5">
         <label for="shop-info" class="form-label">説明</label>
-        <textarea class="form-control" id="shop-info" rows="5" placeholder="クーポンの詳細を書いてください"></textarea>
+        <textarea name="description" class="form-control" id="shop-info" rows="5" placeholder="クーポンの詳細を書いてください"></textarea>
         <div class="invalid-feedback">必須の項目です。</div>
       </div>
       <button class="w-100 btn btn-warning btn-lg mt-5" type="submit">

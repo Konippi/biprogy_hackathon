@@ -41,14 +41,14 @@ def get_kintone_shop_search(tag):
 
 def get_kintone_shop_search_name(store_name):
     # tag = "foods", "clothes", "leisure"
-    query = f'coupon_store_name="{store_name}"'
+    query = f'store_name="{store_name}"'
     params = {
         "app": 1,
         "query": query,
     }
     headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
     jdata = requests.get(BASE_URL_ALL, headers=headers, params=params).json()
-    return jdata["record"]
+    return jdata["records"][0]
 
 
 def get_kintone_coupon(id):
@@ -80,10 +80,6 @@ def get_kintone_coupon_search(tag):
 
 
 def post_kintone_coupon(params):
-    """kintoneにレコードを1件登録する関数"""
     headers = {"X-Cybozu-API-Token": API_TOKEN_COUPON, "Content-Type": "application/json"}
-    jdata = requests.post(BASE_URL, json=params, headers=headers).json()
-
-    print(jdata)
-    return jdata["records"]
-    
+    body = {"app": 2, "record": params}
+    requests.post(BASE_URL, json=body, headers=headers)
