@@ -1,8 +1,9 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from service import line_bot, kintone
 
 
 app = Flask(__name__, static_folder="../frontend/static", template_folder="../frontend/templates")
+# line_bot.send_coupon('sample')
 
 
 @app.route("/", methods=["GET"])
@@ -11,14 +12,14 @@ def init():
 
 
 @app.route("/shop", methods=["GET"])
-def shop_list(tag=None):
-    if tag:
-        shops = kintone.get_kintone_shop_search(tag)
-        return render_template("shop/list.html", shops=shops)
-    else:
-        # line_bot.send_coupon('sample')
-        shops = kintone.get_kintone_shop_all()
-        return render_template("shop/list.html", shops=shops)
+def shop_list():
+    shops = [
+        kintone.get_kintone_shop_all()
+        if request.args.get("search") in [None, all]
+        else kintone.get_kintone_shop_search(request.args.get("search"))
+    ]
+
+    return render_template("shop/list.html", shops=shops)
 
 
 @app.route("/shop/<shop_id>", methods=["GET"])

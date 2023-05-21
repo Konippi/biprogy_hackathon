@@ -10,6 +10,7 @@
 	display: inline-block;
 	position: relative;
 }
+
 .nav-link::after {
 	position: absolute;
 	content: '';
@@ -21,8 +22,14 @@
 	background: #ffffff;
 	transition: all .3s ease 0s;
 }
+
 .nav-link:hover::after {
 	width: 100%;
+}
+
+.search-box {
+	margin-top: 20px;
+	margin-right: 314px;
 }
 
 .detail_bg_color {
