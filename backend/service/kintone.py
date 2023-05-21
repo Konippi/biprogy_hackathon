@@ -77,3 +77,13 @@ def get_kintone_coupon_search(tag):
     }
     jdata = requests.get(BASE_URL_ALL, headers=headers, params=params).json()
     return jdata["records"]
+
+
+def post_kintone_coupon(params):
+    """kintoneにレコードを1件登録する関数"""
+    headers = {"X-Cybozu-API-Token": API_TOKEN_COUPON, "Content-Type": "application/json"}
+    jdata = requests.post(BASE_URL, json=params, headers=headers).json()
+
+    print(jdata)
+    return jdata["records"]
+    
