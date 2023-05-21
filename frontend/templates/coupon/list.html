@@ -1,5 +1,5 @@
 {% extends "components/layout.html" %} {% block subtitle %}
-<div class="position-relative fs-3 black pt-3" style="left: 3vw">クーポン</div>
+<div class="position-relative fs-3 black pt-3" style="left: 3vw">クーポン情報</div>
 {% endblock %} {% block search_box %}
 <form action="/shop" method="get" class="search-box d-flex">
   <select class="search-select form-select border-3" name="search">
@@ -15,12 +15,7 @@
 {% endblock %}{% block contents %}{% for coupon in coupons %}
 <div class="col-4">
   <div class="card shadow-sm">
-    <img
-      src="{{ coupon['coupon_image_url']['value'] }}"
-      alt="サムネイル"
-      width="100%"
-      height="225"
-    />
+    <img src="{{ coupon['coupon_image_url']['value'] }}" alt="サムネイル" width="100%" height="225" />
     <!-- <svg
       class="bd-placeholder-img card-img-top"
       width="100%"
@@ -35,13 +30,8 @@
       <p class="card-title text-center black">
         {{ coupon["coupon_store_name"]["value"] }}
       </p>
-      <a
-        class="detail_a_remove mx-auto"
-        href="/coupon/{{ coupon['レコード番号']['value'] }}"
-      >
-        <button
-          class="detail_btn btn btn-sm btn-outline-secondary mx-auto border-2"
-        >
+      <a class="detail_a_remove mx-auto" href="/coupon/{{ coupon['レコード番号']['value'] }}">
+        <button class="detail_btn btn btn-sm btn-outline-secondary mx-auto border-2">
           <span class="details">詳細</span>
         </button>
       </a>
