@@ -24,10 +24,8 @@ def shop_list():
 @app.route("/shop/<shop_id>", methods=["GET"])
 def shop_details(shop_id):
     shop = kintone.get_kintone_shop(shop_id)
-    print(shop)
 
     return render_template("shop/details.html", shop=shop)
-
 
 @app.route("/coupon", methods=["GET"])
 def coupon_list():
@@ -44,6 +42,7 @@ def coupon_list():
 def coupon_details(coupon_id):
     coupon = kintone.get_kintone_coupon(coupon_id)
     shop_detail = kintone.get_kintone_coupon(coupon_id)
+    print(coupon)
 
     return render_template("coupon/details.html", coupon=coupon, shop_detail=shop_detail)
 
