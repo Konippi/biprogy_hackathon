@@ -3,7 +3,6 @@ from service import line_bot, kintone
 
 
 app = Flask(__name__, static_folder="../frontend/static", template_folder="../frontend/templates")
-# line_bot.send_coupon('sample')
 
 
 @app.route("/", methods=["GET"])
@@ -68,6 +67,7 @@ def admin_new_coupon():
         "coupon_tag": {"value": store_info["tag"]["value"]},
     }
     kintone.post_kintone_coupon(params)
+    line_bot.send_coupon(f"{store_name}がクーポンを発行しました！")
 
     return redirect("/coupon")
 
