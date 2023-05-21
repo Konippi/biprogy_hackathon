@@ -27,6 +27,11 @@
 	width: 100%;
 }
 
+.search-box {
+	margin-top: 20px;
+	margin-right: 314px;
+}
+
 .detail_bg_color {
 	border: 4px solid;
 	border-color: #ffde91;

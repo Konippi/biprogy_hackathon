@@ -1,6 +1,6 @@
-{% extends "components/layout.html" %}
-{% block subtitle %}
+{% extends "components/layout.html" %} {% block subtitle %}
 <div class="position-relative fs-3 black pt-3" style="left: 3vw">店舗情報</div>
+<<<<<<< HEAD
 {% endblock %} {% block contents %}
 <div class="col-3">
   <div class="card shadow-sm">
@@ -22,7 +22,23 @@
     </div>
   </div>
 </div>
+=======
+{% endblock %} {% block search_box %}
+<div></div>
+>>>>>>> 82a54844f7068a9849af335da1e00b357656c38c
 
+<form action="/shop" method="get" class="search-box d-flex">
+  <select class="form-select" name="search">
+    <option selected value="all">全て</option>
+    <option value="foods">飲食</option>
+    <option value="clothes">衣類</option>
+    <option value="leisure">レジャー</option>
+  </select>
+  <button type="submit" class="btn btn-warning ms-2 w-100">
+    <span class="text-white">検索</span>
+  </button>
+</form>
+{% endblock %} {% block contents %}
 <div class="col-3">
   <div class="card shadow-sm">
     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
@@ -45,87 +61,87 @@
 </div>
 
 <div class="col-3">
-	<div class="card shadow-sm">
-		<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidYMid slice">
-			<title>カード画像のキャプション</title>
-			<rect fill="#55595c" width="100%" height="100%" />
-			<text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-		</svg>
-		<div class="card-body">
-			<p class="card-text">お店</p>
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-outline-secondary">
-						見る
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="card shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice">
+      <title>カード画像のキャプション</title>
+      <rect fill="#55595c" width="100%" height="100%" />
+      <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
+    </svg>
+    <div class="card-body">
+      <p class="card-text">お店</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            見る
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-3">
-	<div class="card shadow-sm">
-		<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidYMid slice">
-			<title>カード画像のキャプション</title>
-			<rect fill="#55595c" width="100%" height="100%" />
-			<text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-		</svg>
-		<div class="card-body">
-			<p class="card-text">お店</p>
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-outline-secondary">
-						見る
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="card shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice">
+      <title>カード画像のキャプション</title>
+      <rect fill="#55595c" width="100%" height="100%" />
+      <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
+    </svg>
+    <div class="card-body">
+      <p class="card-text">お店</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            見る
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-3">
-	<div class="card shadow-sm">
-		<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidYMid slice">
-			<title>カード画像のキャプション</title>
-			<rect fill="#55595c" width="100%" height="100%" />
-			<text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-		</svg>
-		<div class="card-body">
-			<p class="card-text">お店</p>
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-outline-secondary">
-						見る
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="card shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice">
+      <title>カード画像のキャプション</title>
+      <rect fill="#55595c" width="100%" height="100%" />
+      <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
+    </svg>
+    <div class="card-body">
+      <p class="card-text">お店</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            見る
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-3">
-	<div class="card shadow-sm">
-		<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidYMid slice">
-			<title>カード画像のキャプション</title>
-			<rect fill="#55595c" width="100%" height="100%" />
-			<text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-		</svg>
-		<div class="card-body">
-			<p class="card-text">お店</p>
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="btn-group">
-					<button type="button" class="btn btn-sm btn-outline-secondary">
-						見る
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="card shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice">
+      <title>カード画像のキャプション</title>
+      <rect fill="#55595c" width="100%" height="100%" />
+      <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
+    </svg>
+    <div class="card-body">
+      <p class="card-text">お店</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">
+            見る
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-3">
