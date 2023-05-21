@@ -2,7 +2,7 @@
 <div class="position-relative fs-3 black pt-3" style="left: 3vw">店舗情報</div>
 {% endblock %} {% block search_box %}
 <form action="/shop" method="get" class="search-box d-flex">
-  <select class="form-select" name="search">
+  <select class="search-select form-select border-3" name="search">
     <option selected value="all">全て</option>
     <option value="foods">飲食</option>
     <option value="clothes">衣類</option>
@@ -24,9 +24,11 @@
       <p class="card-title text-center black">
         {{ shop["store_name"]["value"] }}
       </p>
-      <button class="details btn btn-sm btn-outline-secondary mx-auto border-2">
-        <a class="detail_btn" href="/shop/{{ shop['レコード番号']['value'] }}">詳細</a>
-      </button>
+      <a class="detail_a_remove mx-auto" href="/shop/{{ shop['レコード番号']['value'] }}">
+        <button class="detail_btn btn btn-sm btn-outline-secondary border-2">
+          <span class="details">詳細</span>
+        </button>
+      </a>
     </div>
   </div>
 </div>

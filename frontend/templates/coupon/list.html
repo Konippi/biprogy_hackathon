@@ -2,7 +2,7 @@
 <div class="position-relative fs-3 black pt-3" style="left: 3vw">クーポン</div>
 {% endblock %} {% block search_box %}
 <form action="/shop" method="get" class="search-box d-flex">
-  <select class="form-select" name="search">
+  <select class="search-select form-select border-3" name="search">
     <option selected value="all">全て</option>
     <option value="foods">飲食</option>
     <option value="clothes">衣類</option>
@@ -22,11 +22,13 @@
     </svg>
     <div class="card-body d-flex justify-content-between flex-column">
       <p class="card-title text-center black">
-        {{ coupon["coupon_name"]["value"] }}
+        {{ coupon["coupon_store_name"]["value"] }}
       </p>
-      <div class="btn-group mx-auto">
-        <a href="/coupon/" class="btn btn-sm btn-outline-secondary" aria-disabled="true" role="button" data-bs-toggle="button">詳細</a>
-      </div>
+      <a class="detail_a_remove mx-auto" href="/coupon/{{ coupon['レコード番号']['value'] }}">
+        <button class="detail_btn btn btn-sm btn-outline-secondary mx-auto border-2">
+          <span class="details">詳細</span>
+        </button>
+      </a>
     </div>
   </div>
 </div>

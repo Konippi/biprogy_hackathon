@@ -1,14 +1,22 @@
 {% extends "components/layout.html" %} {% block subtitle %}
-<div class="position-relative fs-3 black pt-3" style="left: 3vw"><i class="bi bi-shop me-2"></i>店舗詳細<i class="bi bi-shop ms-2"></i></div>
+<div class="position-relative fs-3 black pt-3" style="left: 3vw">
+  <i class="bi bi-shop me-2"></i>店舗詳細
+</div>
 <a class="position-relative fs-5 pt-3 detail_back_btn" style="right: 3vw" href="/shop">
   <i class="bi bi-arrow-up-left-square me-2"></i>店舗情報一覧へ
 </a>
 {% endblock %} {% block contents %}
-<div class=" col-10">
-  <div class="fs-2 black">店名</div>
+<div class="col-10">
+  <div class="fs-2 black">{{ shop["store_name"]["value"] }}</div>
 </div>
-<div class=" col-2">
-  <div class="fs-4 mt-2 black"><i class="bi bi-tag"></i>レジャー</div>
+<div class="col-2">
+  <div class="fs-4 mt-2 black">
+    <i class="bi bi-tag"></i>
+    <span>
+      {% set tag = shop['tag']['details'] %} {% if tag == "foods" %} 飲食 {%
+      elif tag == "clothes" %} 衣服 {% else %} レジャー {% endif %}
+    </span>
+  </div>
 </div>
 <div class="col-5">
   <svg class="bd-placeholder-img card-img-top" width="100%" height="325" xmlns="http://www.w3.org/2000/svg"
@@ -20,64 +28,28 @@
 </div>
 
 <div class="ms-4 col-6 detail_bg_color">
-  <div class="fs-5 mt-2 black"><i class="bi bi-pin-map-fill me-2"></i>Google MAP</div>
-  <a class="ms-4 fs-6" href="https://www.google.co.jp/maps/">
-    クリックで表示
+  <div class="fs-5 mt-2 black">
+    <i class="bi bi-pin-map-fill me-2"></i>Google MAP
+  </div>
+  <a class="ms-4 fs-6" href="{{ shop['adress']['value'] }}">
+    クリックで地図を表示
   </a>
-  <div class="fs-5 mt-3 black"><i class="bi bi-telephone me-2"></i>電話番号</div>
-  <div class="ms-4 fs-6 black">
-    〇〇〇-〇〇〇-〇〇〇〇
+  <div class="fs-5 mt-3 black">
+    <i class="bi bi-telephone me-2"></i>電話番号
   </div>
+  <div class="ms-4 fs-6 black">{{ shop["call_number"]['value'] }}</div>
   <div class="fs-5 mt-3 black"><i class="bi bi-clock me-2"></i>営業時間</div>
-  <div class="ms-4 fs-6 black">
-    〇〇:〇〇-〇〇:〇〇
+  <div class="ms-4 fs-6 black">{{ shop['tag']['value'] }}</div>
+  <div class="fs-5 mt-3 black">
+    <i class="bi bi-globe2 me-2"></i>ウェブサイト
   </div>
-  <div class="fs-5 mt-3 black"><i class="bi bi-globe2 me-2"></i>ウェブサイト</div>
-  <div class="ms-4 fs-6 black">
-    https://〇〇〇-〇〇〇〇
-  </div>
+  {% set tag = shop['adress']['value'] %} {% if tag == "-" %}
+  ウェブサイトはありません。 {% else %}
+  <a class="ms-4 fs-6" href="{{ shop['adress']['value'] }}">
+    {{ shop["store_name"]["value"] }}-HP</a>
+  {% endif %}
 </div>
+<div class="col-1"></div>
+<div class="col-10">{{ shop['detail']['value'] }}</div>
 
-<div class="col-4">
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <p class="card-text">紹介その１</p>
-    </div>
-  </div>
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid slice">
-    <title>紹介その１</title>
-    <rect fill="#55595c" width="100%" height="100%" />
-    <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-  </svg>
-</div>
-
-<div class="col-4">
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <p class="card-text">紹介その２</p>
-    </div>
-  </div>
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid slice">
-    <title>紹介その２</title>
-    <rect fill="#55595c" width="100%" height="100%" />
-    <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-  </svg>
-</div>
-
-<div class="col-4">
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <p class="card-text">紹介その３</p>
-    </div>
-  </div>
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="xMidYMid slice">
-    <title>紹介その３</title>
-    <rect fill="#55595c" width="100%" height="100%" />
-    <text fill="#eceeef" dy=".3em" x="50%" y="50%">サムネイル</text>
-  </svg>
-</div>
 {% endblock %}
-</div>

@@ -17,7 +17,7 @@ def get_kintone_shop(id):
     }
     headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
     jdata = requests.get(BASE_URL, headers=headers, params=params).json()
-    return jdata
+    return jdata["record"]
 
 
 def get_kintone_shop_all():

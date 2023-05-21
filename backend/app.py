@@ -43,10 +43,14 @@ def coupon_list():
 @app.route("/coupon/<coupon_id>", methods=["GET"])
 def coupon_details(coupon_id):
     coupon = kintone.get_kintone_coupon(coupon_id)
-    shop_name = coupon["record"]["coupom_store_name"]["value"]
-    shop_detail = kintone.get_kintone_shop_search_name(shop_name)
+    shop_detail = kintone.get_kintone_coupon(coupon_id)
 
     return render_template("coupon/details.html", coupon=coupon, shop_detail=shop_detail)
+
+
+@app.route("/form", methods=["GET"])
+def admin_form():
+    return render_template("form/form.html")
 
 
 if __name__ == "__main__":
