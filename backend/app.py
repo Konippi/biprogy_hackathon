@@ -25,6 +25,7 @@ def shop_list():
 @app.route("/shop/<shop_id>", methods=["GET"])
 def shop_details(shop_id):
     shop = kintone.get_kintone_shop(shop_id)
+    print(shop)
 
     return render_template("shop/details.html", shop=shop)
 

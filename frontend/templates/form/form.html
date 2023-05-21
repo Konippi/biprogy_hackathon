@@ -1,90 +1,38 @@
 {% extends "components/layout.html" %} {% block subtitle %}
 <div class="position-relative fs-3 black pt-3" style="left: 3vw">
-  店舗情報の掲載
+  クーポンの掲載
 </div>
 {% endblock %}{% block contents %}
 
-<div class="mx-auto">
-  <h4 class="mb-3">店舗情報</h4>
-  <form class="needs-validation" novalidate>
+<div class="mx-auto w-75 mt-5">
+  <h4 class="mt-2 mb-2">掲載内容</h4>
+  <form action="/shop/new" method="post" class="needs-validation" novalidate>
     <div class="row g-3">
 
       <!-- 店名を入力 -->
-      <div class="col-12">
-        <i class="bi bi-shop text-white"></i>
-        <label for="shop-name" class="form-label">お店の名前</label>
-        <input type="text" class="form-control" id="shop-name" required />
+      <div class="col-12 mt-5">
+        <label for="shop-name" class="form-label">店名</label>
+        <input type="text" class="form-control" id="shop-name" placeholder="○○店" required />
         <div class="invalid-feedback">必須の項目です。</div>
       </div>
 
-      <!-- 画像をinput -->
-      <div class="col-12">
-        <label for="formFileMultiple" class="form-label">店舗画像をアップロード</label>
-        <input class="form-control" type="file" id="formFileMultiple" />
-        <div class="invalid-feedback">必須の項目です。</div>
-      </div>
-
-      <!-- タグを追加 -->
-      <div class="mb-3">
-        <label for="tagSelect">タグを選択してください</label>
-        <select class="form-select" id="tagSelect" aria-label="">
-          <option selected>選択してください</option>
-          <option value="1">飲食</option>
-          <option value="2">衣類</option>
-          <option value="3">レジャー</option>
-        </select>
-      </div>
-
-      <!-- 住所を入力 -->
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">住所</label>
+      <!-- 有効期限の入力 -->
+      <div class="col-12 mt-5">
+        <label for="expireDay" class="form-label">有効期限</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="inputAddress" required />
+          <input type="text" class="form-control" id="expireDay" placeholder="発行から30日" required />
           <div class="invalid-feedback">必須の項目です。</div>
         </div>
       </div>
 
-      <!-- 電話番号の入力 -->
-      <div class="col-12">
-        <label for="inputTelephone" class="form-label">電話番号</label>
-        <div class="input-group has-validation">
-          <input type="number" class="form-control" id="inputTelephone" placeholder="0120xxxxxxx" required />
-          <div class="invalid-feedback">必須の項目です。</div>
-        </div>
-      </div>
-
-      <!-- 営業時間の入力 -->
-      <div class="col-12">
-        <label for="openTime" class="form-label">営業時間</label>
-        <div class="input-group has-validation">
-          <input type="text" class="form-control" id="openTime" placeholder="10:00~20:00" required />
-          <div class="invalid-feedback">必須の項目です。</div>
-        </div>
-      </div>
-
-      <!-- webサイトのリンクを追加 -->
-      <div class="col-12">
-        <label for="website" class="form-label">webサイト<span class="text-muted">(Optional)</span></label>
-        <input type="text" class="form-control" id="website" placeholder="http://xxx.xxxx" />
+      <!-- クーポン詳細を追加 -->
+      <div class="col-12 mt-5 mb-5">
+        <label for="shop-info" class="form-label">説明</label>
+        <textarea class="form-control" id="shop-info" rows="5" placeholder="クーポンの詳細を書いてください"></textarea>
         <div class="invalid-feedback">必須の項目です。</div>
       </div>
-
-      <!-- 店舗説明を追加 -->
-      <div class="col-12">
-        <label for="text" class="form-label">店舗の説明</label>
-        <input type="text" class="form-control" id="" placeholder="" />
-        <div class="invalid-feedback">必須の項目です。</div>
-      </div>
-
-      <!-- メールアドレスの追加 -->
-      <div class="col-12">
-        <label for="email" class="form-label">メールアドレス<span class="text-muted">(Optional)</span></label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com" />
-        <div class="invalid-feedback">必須の項目です。</div>
-      </div>
-
-      <button class="w-100 btn btn-warning btn-lg mt-4" type="submit">
-        <span class="text-white">Continue to checkout</span>
+      <button class="w-100 btn btn-warning btn-lg mt-5" type="submit">
+        <span class="text-white">掲載</span>
       </button>
   </form>
 </div>

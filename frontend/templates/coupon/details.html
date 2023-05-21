@@ -24,25 +24,22 @@
   </div>
 </div>
 <div class="col-5">
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="325" xmlns="http://www.w3.org/2000/svg"
+  <img src="{{ coupon['image_url']['value'] }}" width="100%" height="350" alt="店舗の写真" title="店舗の写真" />
+  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="325" xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid slice">
     <title>紹介その１</title>
     <rect fill="#55595c" width="100%" height="100%" />
-  </svg>
+  </svg> -->
 </div>
 
 <div class="ms-4 col-6 detail_bg_color">
-  <div class="fs-5 mt-3 black"><i class="bi bi-telephone me-2"></i>電話番号</div>
+  <div class="fs-5 mt-3 black"><i class="bi bi-shop me-2"></i>店名</div>
   <div class="ms-4 fs-6 black">
-    〇〇〇-〇〇〇-〇〇〇〇
+    {{ coupon["coupon_store_name"]["value"] }}
   </div>
-  <div class="fs-5 mt-3 black"><i class="bi bi-clock me-2"></i>営業時間</div>
+  <div class="fs-5 mt-3 black"><i class="bi bi-postcard me-2"></i>クーポン詳細</div>
   <div class="ms-4 fs-6 black">
-    〇〇:〇〇-〇〇:〇〇
-  </div>
-  <div class="fs-5 mt-3 black"><i class="bi bi-globe2 me-2"></i>ウェブサイト</div>
-  <div class="ms-4 fs-6 black">
-    https://〇〇〇-〇〇〇〇
+    {{ coupon["coupon_store_name"]["value"] }}
   </div>
 </div>
 {% endblock %}
