@@ -1,6 +1,24 @@
-{% extends "components/layout.html" %} {% block subtitle %}
+{% extends "components/layout.html" %}
+
+{% block subtitle %}
 <div class="position-relative fs-3 black pt-3" style="left: 3vw">クーポン</div>
-{% endblock %} {% block contents %}
+{% endblock %}
+
+{% block search_box %}
+<form action="/shop" method="get" class="search-box d-flex">
+  <select class="form-select" name="search">
+    <option selected value="all">全て</option>
+    <option value="foods">飲食</option>
+    <option value="clothes">衣類</option>
+    <option value="leisure">レジャー</option>
+  </select>
+  <button type="submit" class="btn btn-warning ms-2 w-100">
+    <span class="text-white">検索</span>
+  </button>
+</form>
+{% endblock %}
+
+{% block contents %}
 <div class="col-3">
   <div class="card shadow-sm">
     <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg"
