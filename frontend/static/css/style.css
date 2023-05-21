@@ -13,14 +13,14 @@
 
 .nav-link::after {
 	position: absolute;
-	content: '';
+	content: "";
 	bottom: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 0;
 	height: 2px;
 	background: #ffffff;
-	transition: all .3s ease 0s;
+	transition: all 0.3s ease 0s;
 }
 
 .nav-link:hover::after {
@@ -49,4 +49,17 @@
 
 .black {
 	color: #252525;
+}
+
+.detail_btn {
+	text-decoration: none;
+	color: #252525;
+}
+
+.detail_btn:hover {
+	color: #ffffff;
+}
+
+.details:hover {
+	color: #ffffff;
 }

@@ -1,92 +1,77 @@
-{% extends "components/layout.html" %}
-{% block subtitle %}
-<div class="position-relative fs-3 black pt-3" style="left: 3vw">店舗情報の掲載</div>
+{% extends "components/layout.html" %} {% block subtitle %}
+<div class="position-relative fs-3 black pt-3" style="left: 3vw">
+  店舗情報の掲載
+</div>
 {% endblock %}{% block contents %}
 
 <div class="col-md-7 col-lg-8">
   <h4 class="mb-3">店舗情報</h4>
   <form class="needs-validation" novalidate>
     <div class="row g-3">
-
       <!-- 店名を入力 -->
       <div class="col-12">
         <label for="" class="form-label">お店の名前</label>
-        <input type="text" class="form-control" id="" placeholder="" required>
-        <div class="invalid-feedback">
-          必須の項目です。
-        </div>
+        <input type="text" class="form-control" id="" placeholder="" required />
+        <div class="invalid-feedback">必須の項目です。</div>
       </div>
 
       <!-- 画像をinput -->
       <div class="col-12">
         <label for="formFileMultiple" class="form-label">店舗画像をアップロード</label>
-        <input class="form-control" type="file" id="formFileMultiple">
-        <div class="invalid-feedback">
-          必須の項目です。
-        </div>
+        <input class="form-control" type="file" id="formFileMultiple" />
+        <div class="invalid-feedback">必須の項目です。</div>
       </div>
 
       <!-- 住所を入力 -->
       <div class="col-12">
         <label for="address" class="form-label">address</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="address" placeholder="" required>
-        <div class="invalid-feedback">
-            必須の項目です。
-          </div>
+          <input type="text" class="form-control" id="address" placeholder="" required />
+          <div class="invalid-feedback">必須の項目です。</div>
         </div>
       </div>
-      
+
       <!-- 電話番号の入力 -->
       <div class="col-12">
         <label for="" class="form-label">電話番号</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="" placeholder="" required>
-        <div class="invalid-feedback">
-            必須の項目です。
-          </div>
+          <input type="text" class="form-control" id="" placeholder="" required />
+          <div class="invalid-feedback">必須の項目です。</div>
         </div>
       </div>
-      
+
       <!-- 営業時間の入力 -->
       <div class="col-12">
         <label for="" class="form-label">営業時間</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="" placeholder="" required>
-        <div class="invalid-feedback">
-            必須の項目です。
-          </div>
+          <input type="text" class="form-control" id="" placeholder="" required />
+          <div class="invalid-feedback">必須の項目です。</div>
         </div>
       </div>
 
       <!-- 名前の入力 -> いる？ -->
       <div class="col-sm-6">
         <label for="firstName" class="form-label">姓</label>
-        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-        <div class="invalid-feedback">
-          Valid first name is required.
-        </div>
+        <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+        <div class="invalid-feedback">Valid first name is required.</div>
       </div>
       <div class="col-sm-6">
         <label for="lastName" class="form-label">名</label>
-        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-        <div class="invalid-feedback">
-          Valid last name is required.
-        </div>
+        <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+        <div class="invalid-feedback">Valid last name is required.</div>
       </div>
 
       <div class="col-12">
         <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" />
         <div class="invalid-feedback">
           Please enter a valid email address for shipping updates.
         </div>
       </div>
 
-
       <div class="col-12">
         <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" />
       </div>
 
       <div class="col-md-5">
@@ -95,9 +80,7 @@
           <option value="">Choose...</option>
           <option>United States</option>
         </select>
-        <div class="invalid-feedback">
-          Please select a valid country.
-        </div>
+        <div class="invalid-feedback">Please select a valid country.</div>
       </div>
 
       <div class="col-md-4">
@@ -106,47 +89,43 @@
           <option value="">Choose...</option>
           <option>California</option>
         </select>
-        <div class="invalid-feedback">
-          Please provide a valid state.
-        </div>
+        <div class="invalid-feedback">Please provide a valid state.</div>
       </div>
 
       <div class="col-md-3">
         <label for="zip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="zip" placeholder="" required>
-        <div class="invalid-feedback">
-          Zip code required.
-        </div>
+        <input type="text" class="form-control" id="zip" placeholder="" required />
+        <div class="invalid-feedback">Zip code required.</div>
       </div>
     </div>
 
-    <hr class="my-4">
+    <hr class="my-4" />
 
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="same-address">
+      <input type="checkbox" class="form-check-input" id="same-address" />
       <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
     </div>
 
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="save-info">
+      <input type="checkbox" class="form-check-input" id="save-info" />
       <label class="form-check-label" for="save-info">Save this information for next time</label>
     </div>
 
-    <hr class="my-4">
+    <hr class="my-4" />
 
     <h4 class="mb-3">Payment</h4>
 
     <div class="my-3">
       <div class="form-check">
-        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+        <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required />
         <label class="form-check-label" for="credit">Credit card</label>
       </div>
       <div class="form-check">
-        <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+        <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required />
         <label class="form-check-label" for="debit">Debit card</label>
       </div>
       <div class="form-check">
-        <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+        <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required />
         <label class="form-check-label" for="paypal">PayPal</label>
       </div>
     </div>
@@ -154,41 +133,35 @@
     <div class="row gy-3">
       <div class="col-md-6">
         <label for="cc-name" class="form-label">Name on card</label>
-        <input type="text" class="form-control" id="cc-name" placeholder="" required>
+        <input type="text" class="form-control" id="cc-name" placeholder="" required />
         <small class="text-muted">Full name as displayed on card</small>
-        <div class="invalid-feedback">
-          Name on card is required
-        </div>
+        <div class="invalid-feedback">Name on card is required</div>
       </div>
 
       <div class="col-md-6">
         <label for="cc-number" class="form-label">Credit card number</label>
-        <input type="text" class="form-control" id="cc-number" placeholder="" required>
-        <div class="invalid-feedback">
-          Credit card number is required
-        </div>
+        <input type="text" class="form-control" id="cc-number" placeholder="" required />
+        <div class="invalid-feedback">Credit card number is required</div>
       </div>
 
       <div class="col-md-3">
         <label for="cc-expiration" class="form-label">Expiration</label>
-        <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-        <div class="invalid-feedback">
-          Expiration date required
-        </div>
+        <input type="text" class="form-control" id="cc-expiration" placeholder="" required />
+        <div class="invalid-feedback">Expiration date required</div>
       </div>
 
       <div class="col-md-3">
         <label for="cc-cvv" class="form-label">CVV</label>
-        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-        <div class="invalid-feedback">
-          Security code required
-        </div>
+        <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
+        <div class="invalid-feedback">Security code required</div>
       </div>
     </div>
 
-    <hr class="my-4">
+    <hr class="my-4" />
 
-    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+    <button class="w-100 btn btn-primary btn-lg" type="submit">
+      Continue to checkout
+    </button>
   </form>
 </div>
 
