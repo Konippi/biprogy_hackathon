@@ -11,10 +11,14 @@ def init():
 
 
 @app.route("/shop", methods=["GET"])
-def shop_list():
-    # line_bot.send_coupon('sample')
-    shops = kintone.get_kintone_shop_all()
-    return render_template("shop/list.html", shops=shops)
+def shop_list(tag=None):
+    if tag:
+        shops = kintone.get_kintone_shop_search(tag)
+        return render_template("shop/list.html", shops=shops)
+    else:
+        # line_bot.send_coupon('sample')
+        shops = kintone.get_kintone_shop_all()
+        return render_template("shop/list.html", shops=shops)
 
 
 @app.route("/shop/<shop_id>", methods=["GET"])
@@ -24,15 +28,21 @@ def shop_details(shop_id):
 
 
 @app.route("/coupon", methods=["GET"])
-def coupon_list():
-    coupons = kintone.get_kintone_coupon_all()
-    return render_template("coupon/list.html", coupons=coupons)
+def coupon_list(tag=None):
+    if tag:
+        coupons = kintone.get_kintone_coupon_search(tag)
+        return render_template("coupon/list.html", coupons=coupons)
+    else:
+        coupons = kintone.get_kintone_coupon_all()
+        return render_template("coupon/list.html", coupons=coupons)
 
 
 @app.route("/coupon/<coupon_id>", methods=["GET"])
 def coupon_details(coupon_id):
-    coupon = kintone.get_kintone_shop(coupon_id)
-    return render_template("coupon/details.html", coupon=coupon)
+    coupon = kintone.get_kintone_coupon(coupon_id)
+    shop_name = coupon["record"]["coupom_store_name"]["value"]
+    shop_detail = kintone.get_kintone_shop_search_name(shop_name)
+    return render_template("coupon/details.html", coupon=coupon, shop_detail=shop_detail)
 
 
 if __name__ == "__main__":
