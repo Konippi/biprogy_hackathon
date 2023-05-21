@@ -24,7 +24,7 @@ def get_kintone_shop_all():
     headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
     url = BASE_URL_ALL + "?app=1"
     jdata = requests.get(url, headers=headers).json()
-    return jdata
+    return jdata["records"]
 
 
 def get_kintone_shop_search(tag):
@@ -36,7 +36,7 @@ def get_kintone_shop_search(tag):
     }
     headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
     jdata = requests.get(BASE_URL_ALL, headers=headers, params=params).json()
-    return jdata
+    return jdata["records"]
 
 
 def get_kintone_shop_search_name(store_name):
@@ -48,7 +48,7 @@ def get_kintone_shop_search_name(store_name):
     }
     headers = {"X-Cybozu-API-Token": API_TOKEN_SHOP}
     jdata = requests.get(BASE_URL_ALL, headers=headers, params=params).json()
-    return jdata
+    return jdata["record"]
 
 
 def get_kintone_coupon(id):
@@ -58,14 +58,14 @@ def get_kintone_coupon(id):
     }
     headers = {"X-Cybozu-API-Token": API_TOKEN_COUPON}
     jdata = requests.get(BASE_URL, headers=headers, params=params).json()
-    return jdata
+    return jdata["record"]
 
 
 def get_kintone_coupon_all():
     headers = {"X-Cybozu-API-Token": API_TOKEN_COUPON}
     url = BASE_URL_ALL + "?app=2"
     jdata = requests.get(url, headers=headers).json()
-    return jdata
+    return jdata["records"]
 
 
 def get_kintone_coupon_search(tag):
@@ -76,15 +76,4 @@ def get_kintone_coupon_search(tag):
         "query": query,
     }
     jdata = requests.get(BASE_URL_ALL, headers=headers, params=params).json()
-    return jdata
-
-
-if __name__ == "__main__":
-    # RESP = get_kintone_shop(2)
-    # RESP = get_kintone_shop_all()
-    coupon = get_kintone_coupon(2)
-    # RESP = get_kintone_coupon_all()
-    # RESP = get_kintone_shop_search("leisure")
-    # RESP = get_kintone_coupon_search("foods")
-    # RESP.text.coupom_store_name
-    print(type(coupon["record"]["coupom_store_name"]["value"]))
+    return jdata["records"]

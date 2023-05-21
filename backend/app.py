@@ -13,11 +13,11 @@ def init():
 
 @app.route("/shop", methods=["GET"])
 def shop_list():
-    shops = [
+    shops = (
         kintone.get_kintone_shop_all()
-        if request.args.get("search") in [None, all]
+        if request.args.get("search") in [None, "all"]
         else kintone.get_kintone_shop_search(request.args.get("search"))
-    ]
+    )
 
     return render_template("shop/list.html", shops=shops)
 
@@ -31,11 +31,11 @@ def shop_details(shop_id):
 
 @app.route("/coupon", methods=["GET"])
 def coupon_list():
-    coupons = [
+    coupons = (
         kintone.get_kintone_coupon_all()
-        if request.args.get("search") in [None, all]
+        if request.args.get("search") in [None, "all"]
         else kintone.get_kintone_coupon_search(request.args.get("search"))
-    ]
+    )
 
     return render_template("coupon/list.html", coupons=coupons)
 
